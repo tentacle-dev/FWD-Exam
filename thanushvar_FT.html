@@ -13,28 +13,5 @@
 
   <button id="b3" onclick="addRow()">Add Row</button>
 
-  <script language="javascript">
-    function generateTable() {
-      var rows = document.getElementById("t1").value;
-      var cols = document.getElementById("t2").value;
-      var table = '<table border="1">';
-      for (var i = 0; i < rows; i++) {
-        table += "<tr>";
-        for (var j = 0; j < cols; j++) {
-          table += "<td>Row " + (i + 1) + ", Col " + (j + 1) + "</td>";
-        }
-        table += "</tr>";
-      }
-      table += "</table>";
-      var tableElement = document.createElement("div");
-      tableElement.innerHTML = table;
-      document.body.appendChild(tableElement); //
-      document.getElementById("b2").style.display = "inline"; // Show Add Column button
-      document.getElementById("b3").style.display = "inline";
-    }
-
-    function addColumn() {}
-
-    function addRow() {}
-  </script>
+  <script language="javascript"></script>
 </html>
