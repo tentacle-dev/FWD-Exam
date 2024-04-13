@@ -1,0 +1,55 @@
+<html>
+  <font size="8" color="green">Final test lab</font
+  ><br /><br />
+  Number of rows:
+  <input type="text" id="t1" /><br /><br />
+  Number of cols:
+  <input type="text" id="t2" /><br /><br />
+
+  <button id="b1" onclick="generateTable()">Generate Table</button
+  ><br /><br />
+
+  <button id="b2" onclick="addColumn()">Add Column</button>
+
+  <button id="b3" onclick="addRow()">Add Row</button>
+
+  <script language="javascript">
+    function generateTable() {
+      var numRows = document.getElementById("t1").value;
+      var numCols = document.getElementById("t2").value;
+      var table = document.createElement("table");
+      for (var r = 0; r < numRows; r++) {
+        var row = document.createElement("tr");
+        for (var c = 0; c < numCols; c++) {
+          var cell = document.createElement("td");
+          cell.textContent = "(" + r + c + ")";
+          row.appendChild(cell);
+        }
+        table.appendChild(row);
+      }
+      document.body.appendChild(table);
+    }
+
+    function addColumn() {
+      var table = document.querySelector("table");
+      var rows = Array.from(table.rows);
+      rows.forEach(function (row) {
+        var cell = document.createElement("td");
+        cell.textContent = "New Col";
+        row.appendChild(cell);
+      });
+    }
+
+    function addRow() {
+      var table = document.querySelector("table");
+      var newRow = document.createElement("tr");
+      var numCols = table.rows[0].cells.length;
+      for (var c = 0; c < numCols; c++) {
+        var cell = document.createElement("td");
+        cell.textContent = "New Row";
+        newRow.appendChild(cell);
+      }
+      table.appendChild(newRow);
+    }
+  </script>
+</html>
